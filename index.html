@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>XecLabs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;color:#111;line-height:1.6}
+.container{max-width:1100px;margin:auto;padding:0 24px;position:relative;z-index:2}
+
+/* NAV */
+.nav{background:#020617;position:sticky;top:0;z-index:10}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:64px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-icon{width:34px;height:34px}
+.brand-text{font-weight:700;font-size:1.1rem}
+.xec{color:#fff}.labs{color:#3aa0ff}
+.nav-links{list-style:none;display:flex;gap:24px}
+.nav-links a{color:#cbd5f5;text-decoration:none}
+.nav-cta{background:#2563eb;padding:8px 16px;border-radius:6px;color:#fff}
+
+/* HERO */
+.hero{position:relative;background:linear-gradient(135deg,#0f172a,#020617);color:#fff;padding:120px 0;text-align:center;overflow:hidden}
+#bg-canvas{position:absolute;inset:0;z-index:0}
+.hero-icon{width:90px;margin-bottom:24px}
+.hero-title{font-size:3.4rem}
+.tagline{font-size:1.3rem;margin-top:16px}
+.subtitle{max-width:600px;margin:14px auto;opacity:.85}
+
+/* CTA */
+.cta{display:inline-block;margin-top:32px;padding:14px 28px;background:#2563eb;color:#fff;text-decoration:none;border-radius:6px}
+
+/* SECTIONS */
+.section{padding:100px 0}
+.section.light{background:#f8fafc}
+h2{font-size:2.2rem;margin-bottom:24px}
+.lead{font-size:1.2rem;margin-bottom:16px}
+
+/* WHO */
+.who-layout{display:grid;grid-template-columns:2fr 1.2fr;gap:48px}
+.who-cards{display:grid;gap:20px}
+.who-card{background:#fff;padding:28px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+
+/* WHAT */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-top:40px}
+.service-card{position:relative;background:#fff;padding:32px 28px;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.service-line{position:absolute;top:0;left:0;height:5px;width:100%;border-radius:10px 10px 0 0}
+.blue .service-line{background:#2563eb}
+.purple .service-line{background:#7c3aed}
+.green .service-line{background:#059669}
+.orange .service-line{background:#ea580c}
+
+/* SOCIAL */
+.social{margin-top:24px}
+.social a{color:#2563eb;text-decoration:none;font-weight:600}
+
+/* FOOTER */
+footer{text-align:center;padding:36px;color:#666}
+
+@media(max-width:900px){
+.who-layout{grid-template-columns:1fr}
+.hero-title{font-size:2.6rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 100 100">
+        <line x1="20" y1="20" x2="80" y2="80" stroke="#3aa0ff" stroke-width="10"/>
+        <line x1="80" y1="20" x2="20" y2="80" stroke="#e5e7eb" stroke-width="10"/>
+      </svg>
+      <span class="brand-text"><span class="xec">Xec</span><span class="labs">Labs</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#who">Who we are</a></li>
+      <li><a href="#what">What we do</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <canvas id="bg-canvas"></canvas>
+  <div class="container">
+    <svg class="hero-icon" viewBox="0 0 100 100">
+      <line x1="20" y1="20" x2="80" y2="80" stroke="#3aa0ff" stroke-width="12"/>
+      <line x1="80" y1="20" x2="20" y2="80" stroke="#e5e7eb" stroke-width="12"/>
+    </svg>
+    <h1 class="hero-title"><span class="xec">Xec</span><span class="labs">Labs</span></h1>
+    <p class="tagline">From complexity to execution.</p>
+    <p class="subtitle">Digital transformation, automation and delivery that actually works.</p>
+    <a href="#contact" class="cta">Start a conversation</a>
+  </div>
+</header>
+
+<!-- WHO -->
+<section id="who" class="section">
+  <div class="container who-layout">
+    <div>
+      <h2>Who we are</h2>
+      <p class="lead">We help organizations execute complex transformation initiatives.</p>
+      <p>
+        XecLabs supports companies across digital platforms, automation,
+        operating model changes and large-scale adoption programs.
+      </p>
+      <p>
+        We work hands-on with leadership teams to ensure initiatives are not
+        just designed — but successfully delivered and adopted.
+      </p>
+    </div>
+    <div class="who-cards">
+      <div class="who-card"><strong>10+ years</strong><br>Senior transformation & delivery experience</div>
+      <div class="who-card"><strong>Enterprise scale</strong><br>Complex global environments</div>
+      <div class="who-card"><strong>Execution focus</strong><br>Measured business outcomes</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT -->
+<section id="what" class="section light">
+  <div class="container">
+    <h2>What we do</h2>
+
+    <div class="services-grid">
+      <div class="service-card blue">
+        <div class="service-line"></div>
+        <h3>Digital & Process Transformation</h3>
+        <p>
+          We design and deliver end-to-end digital and process transformations
+          across operations, supply chain and corporate functions.
+        </p>
+        <p>
+          From strategy to execution — platforms, processes, data and governance.
+        </p>
+      </div>
+
+      <div class="service-card purple">
+        <div class="service-line"></div>
+        <h3>Automation & AI Enablement</h3>
+        <p>
+          Identification, prioritization and delivery of automation and AI use cases
+          with clear business value.
+        </p>
+        <p>
+          RPA, AI and agentic automation — from business case to scaled rollout.
+        </p>
+      </div>
+
+      <div class="service-card green">
+        <div class="service-line"></div>
+        <h3>Program & Project Delivery</h3>
+        <p>
+          Hands-on leadership of complex transformation programs
+          and critical enterprise initiatives.
+        </p>
+        <p>
+          Governance, stakeholders, delivery cadence and risk management.
+        </p>
+      </div>
+
+      <div class="service-card orange">
+        <div class="service-line"></div>
+        <h3>Change & Adoption</h3>
+        <p>
+          Ensuring solutions are adopted and embedded into daily operations.
+        </p>
+        <p>
+          Change strategy, communication, training, KPIs and post-go-live support.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2>Selected projects</h2>
+    <p class="lead">Detailed project references will be published soon.</p>
+    <p>Due to client confidentiality, case studies will be shared progressively.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section light">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>
+      Prague · Czech Republic · Europe<br>
+      <strong><a href="mailto:Michal.Broz@XecLabs.eu">Michal.Broz@XecLabs.eu</a></strong>
+    </p>
+
+    <a class="cta"
+      href="mailto:Michal.Broz@XecLabs.eu?subject=Inquiry%20from%20XecLabs%20website"
+      onclick="window.open('https://outlook.office.com/mail/deeplink/compose?to=Michal.Broz@XecLabs.eu','_blank')">
+      Get in touch
+    </a>
+
+    <div class="social">
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 XecLabs</footer>
+
+<script>
+const c=document.getElementById("bg-canvas"),ctx=c.getContext("2d"),h=document.querySelector(".hero");
+function r(){c.width=h.offsetWidth;c.height=h.offsetHeight}
+r();window.addEventListener("resize",r);
+const p=[...Array(70)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25}));
+(function a(){ctx.clearRect(0,0,c.width,c.height);
+p.forEach(d=>{d.x+=d.vx;d.y+=d.vy;
+if(d.x<0||d.x>c.width)d.vx*=-1;
+if(d.y<0||d.y>c.height)d.vy*=-1;
+ctx.fillStyle="rgba(255,255,255,.6)";
+ctx.beginPath();ctx.arc(d.x,d.y,1.5,0,Math.PI*2);ctx.fill()});
+requestAnimationFrame(a)})();
+</script>
+
+</body>
+</html>
