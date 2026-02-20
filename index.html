@@ -154,7 +154,132 @@ Senior accountability. Structured execution. Sustainable measurable impact.
 </div>
 </section>
 
+<!-- IMPACT -->
+<section id="impact" class="section impact">
+<div class="container">
+<div class="impact-frame">
+<h2>Impact Delivered</h2>
+<div class="impact-grid">
+<div><div class="impact-number" data-target="10" data-prefix="$" data-suffix="M+">0</div><p>Direct Business Value</p></div>
+<div><div class="impact-number" data-target="40" data-suffix="+">0</div><p>Countries Impacted</p></div>
+<div><div class="impact-number" data-target="57" data-suffix="%">0</div><p>Touchless Automation</p></div>
+<div><div class="impact-number" data-target="93" data-suffix="%">0</div><p>System Stability</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+<div class="container">
+<h2>Transformation Portfolio</h2>
+
+<div class="project-company">
+<div class="company-header">
+<img src="abinbev.png" alt="AB InBev">
+<p class="company-description">Global transformation across logistics, planning, automation and AI.</p>
+</div>
+<div class="project-grid">
+<div class="project-card">
+<h4>European TMS – Blue Yonder</h4>
+<p>Multi-country logistics transformation and automation.</p>
+<div class="kpi-badges"><span>57% Touchless</span><span>+12% OTIF</span></div>
+</div>
+<div class="project-card">
+<h4>o9 Global Planning Platform</h4>
+<p>End-to-end global planning backbone.</p>
+<div class="kpi-badges"><span>77% → 93%</span><span>$1.5M</span></div>
+</div>
+<div class="project-card">
+<h4>Agentic AI – Stock Optimization</h4>
+<p>Autonomous decision-support reducing write-offs.</p>
+<div class="kpi-badges"><span>$1.2M Case</span></div>
+</div>
+</div>
+</div>
+
+<div class="project-company">
+<div class="company-header">
+<img src="emco.png" alt="Emco">
+<p class="company-description">Active operational transformation program.</p>
+</div>
+<div class="project-grid">
+<div class="project-card">
+<h4>PLM – Product Lifecycle Management</h4>
+<p>From idea to shop floor integration.</p>
+</div>
+<div class="project-card">
+<h4>APS – Advanced Planning System</h4>
+<p>Improved forecast accuracy and operational alignment.</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section light">
+<div class="container">
+<h2>Contact</h2>
+<p>
+Prague · Czech Republic · Europe<br>
+<strong><a href="mailto:Michal.Broz@XecLabs.eu">Michal.Broz@XecLabs.eu</a></strong>
+</p>
+</div>
+</section>
+
 <footer>© 2026 XecLabs</footer>
+
+<script>
+// HERO ANIMATION
+const c=document.getElementById("bg-canvas"),
+ctx=c.getContext("2d"),
+h=document.querySelector(".hero");
+function r(){c.width=h.offsetWidth;c.height=h.offsetHeight}
+r();window.addEventListener("resize",r);
+const p=[...Array(50)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3}));
+(function a(){
+ctx.clearRect(0,0,c.width,c.height);
+p.forEach(d=>{
+d.x+=d.vx;d.y+=d.vy;
+if(d.x<0||d.x>c.width)d.vx*=-1;
+if(d.y<0||d.y>c.height)d.vy*=-1;
+ctx.fillStyle="rgba(255,255,255,.3)";
+ctx.beginPath();ctx.arc(d.x,d.y,1.5,0,Math.PI*2);ctx.fill()
+});
+requestAnimationFrame(a)
+})();
+
+// COUNT UP FIX
+const counters=document.querySelectorAll('.impact-number');
+function animateCounter(counter){
+if(counter.dataset.animated==="true")return;
+counter.dataset.animated="true";
+const target=+counter.dataset.target;
+const prefix=counter.dataset.prefix||'';
+const suffix=counter.dataset.suffix||'';
+const duration=1400;
+const startTime=performance.now();
+function update(currentTime){
+const progress=Math.min((currentTime-startTime)/duration,1);
+const value=Math.floor(progress*target);
+counter.textContent=prefix+value+suffix;
+if(progress<1){requestAnimationFrame(update)}
+else{counter.textContent=prefix+target+suffix}
+}
+requestAnimationFrame(update);
+}
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+counters.forEach(counter=>animateCounter(counter));
+observer.disconnect();
+}
+});
+},{threshold:.6});
+observer.observe(document.querySelector('#impact'));
+</script>
 
 </body>
 </html>
