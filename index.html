@@ -25,7 +25,7 @@ body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff}
 .subtitle{max-width:700px;margin:16px auto;opacity:.85}
 .cta{display:inline-block;margin-top:28px;padding:14px 28px;background:#2563eb;color:#fff;text-decoration:none;border-radius:6px}
 
-/* SECTION */
+/* SECTIONS */
 .section{padding:120px 0}
 h2{font-size:2.4rem;margin-bottom:50px}
 
@@ -38,55 +38,47 @@ h2{font-size:2.4rem;margin-bottom:50px}
 /* PROJECTS */
 .project-company{margin-top:100px}
 .company-header img{max-height:70px;margin-bottom:20px}
-.company-description{opacity:.7;margin-bottom:60px}
+.company-description{opacity:.7;margin-bottom:50px}
 
-/* Timeline */
-.timeline{position:relative;padding-left:50px;display:grid;gap:50px}
-.timeline::before{
-content:"";
-position:absolute;
-left:12px;top:0;width:3px;height:100%;
-background:linear-gradient(to bottom,#3aa0ff,transparent);
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:28px
 }
 
-.timeline-item{position:relative;cursor:pointer}
-.timeline-item::before{
-content:"";
-position:absolute;
-left:-40px;top:6px;width:14px;height:14px;
-background:#3aa0ff;border-radius:50%;
-box-shadow:0 0 12px rgba(58,160,255,.6);
-}
-
-.timeline-item h4{
-margin-bottom:12px;
-background:linear-gradient(90deg,#3aa0ff,#7c3aed);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.kpi-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
-.kpi-badges span{
-padding:6px 12px;font-size:.75rem;border-radius:20px;
-background:rgba(58,160,255,.08);
-border:1px solid rgba(58,160,255,.3);
-}
-
-.timeline-detail{max-height:0;overflow:hidden;transition:max-height .6s ease;opacity:.85}
-.timeline-item.active .timeline-detail{max-height:300px;margin-top:12px}
-
-/* EMCO */
-.active-program{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
-.active-card{
-padding:30px;border-radius:16px;
+.project-card{
+padding:28px;
+border-radius:18px;
 background:linear-gradient(145deg,#ffffff,#f1f5f9);
-box-shadow:0 12px 30px rgba(0,0,0,.06);
+box-shadow:0 15px 40px rgba(0,0,0,.06);
+transition:.3s ease
 }
-.active-card h4{
+
+.project-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 50px rgba(0,0,0,.1)
+}
+
+.project-card h4{
 margin-bottom:14px;
 background:linear-gradient(90deg,#3aa0ff,#7c3aed);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+}
+
+.kpi-badges{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:12px
+}
+
+.kpi-badges span{
+padding:6px 12px;
+font-size:.75rem;
+border-radius:20px;
+background:rgba(58,160,255,.08);
+border:1px solid rgba(58,160,255,.3);
 }
 
 footer{text-align:center;padding:40px;color:#666}
@@ -133,103 +125,135 @@ footer{text-align:center;padding:40px;color:#666}
 <div class="container">
 <h2>Transformation Portfolio</h2>
 
+<!-- AB INBEV -->
 <div class="project-company">
 <div class="company-header">
 <img src="abinbev.png" alt="AB InBev">
 <p class="company-description">Global transformation across logistics, planning, automation and AI.</p>
 </div>
 
-<div class="timeline">
+<div class="project-grid">
 
-<div class="timeline-item">
+<div class="project-card">
 <h4>Weight per Shipment – Lean Six Sigma</h4>
-<div class="kpi-badges"><span>$150K/year</span><span>SLA Improvement</span></div>
-<div class="timeline-detail">Redesign of ordering logic and shipment thresholds driving cost reduction and behavioral alignment.</div>
+<p>Shipment logic redesign and cross-functional alignment.</p>
+<div class="kpi-badges">
+<span>$150K/year</span>
+<span>SLA ↑</span>
+</div>
 </div>
 
-<div class="timeline-item">
+<div class="project-card">
 <h4>SAP XI → SAP PO Migration</h4>
-<div class="kpi-badges"><span>Integration Stability</span><span>Incident Reduction</span></div>
-<div class="timeline-detail">Centralized integration architecture enabling governance and future TMS rollout.</div>
+<p>Centralized integration architecture and governance model.</p>
+<div class="kpi-badges">
+<span>Stability ↑</span>
+<span>Incident ↓</span>
+</div>
 </div>
 
-<div class="timeline-item">
+<div class="project-card">
 <h4>European TMS – Blue Yonder</h4>
-<div class="kpi-badges"><span>57% Touchless</span><span>+12% OTIF</span></div>
-<div class="timeline-detail">Multi-country logistics standardization and automation across Europe.</div>
+<p>Multi-country logistics transformation and automation.</p>
+<div class="kpi-badges">
+<span>57% Touchless</span>
+<span>+12% OTIF</span>
+</div>
 </div>
 
-<div class="timeline-item">
-<h4>NLP + Outlook + RPA Automation</h4>
-<div class="kpi-badges"><span>FTE Reduction</span><span>SLA Adherence</span></div>
-<div class="timeline-detail">AI-powered email classification integrated with TMS backend systems.</div>
+<div class="project-card">
+<h4>NLP + RPA Automation</h4>
+<p>AI-powered email parsing integrated with TMS backend.</p>
+<div class="kpi-badges">
+<span>FTE ↓</span>
+<span>SLA ↑</span>
+</div>
 </div>
 
-<div class="timeline-item">
-<h4>Global Document Management System</h4>
-<div class="kpi-badges"><span>+6% First Time Right</span><span>Compliance</span></div>
-<div class="timeline-detail">Global governance and standardized workflow for enterprise documentation.</div>
+<div class="project-card">
+<h4>Global DMS</h4>
+<p>Enterprise document governance and workflow standardization.</p>
+<div class="kpi-badges">
+<span>+6% First Time Right</span>
+</div>
 </div>
 
-<div class="timeline-item">
+<div class="project-card">
 <h4>Complaints Portal + RPA</h4>
-<div class="kpi-badges"><span>Lower Cost per Case</span><span>SLA Tracking</span></div>
-<div class="timeline-detail">Customer-facing digital portal integrated with backend automation.</div>
+<p>Customer-facing portal with backend automation integration.</p>
+<div class="kpi-badges">
+<span>Cost/Case ↓</span>
+</div>
 </div>
 
-<div class="timeline-item">
-<h4>Workflow Apps – PowerApps Suite</h4>
-<div class="kpi-badges"><span>Cycle Time Reduction</span><span>Audit Transparency</span></div>
-<div class="timeline-detail">Low-code transformation of approval and master data processes.</div>
+<div class="project-card">
+<h4>Workflow Apps – PowerApps</h4>
+<p>Low-code digitalization of approval and master data processes.</p>
+<div class="kpi-badges">
+<span>Cycle Time ↓</span>
+</div>
 </div>
 
-<div class="timeline-item">
+<div class="project-card">
 <h4>Smart Inventory Optimization</h4>
-<div class="kpi-badges"><span>Working Capital ↓</span><span>Forecast Accuracy ↑</span></div>
-<div class="timeline-detail">Predictive modeling (Random Forest) driving inventory efficiency.</div>
+<p>Predictive modeling reducing working capital exposure.</p>
+<div class="kpi-badges">
+<span>Inventory ↓</span>
+<span>Forecast ↑</span>
+</div>
 </div>
 
-<div class="timeline-item">
+<div class="project-card">
 <h4>Loading Forecast Model</h4>
-<div class="kpi-badges"><span>Capacity Planning ↑</span><span>Urgent Shipments ↓</span></div>
-<div class="timeline-detail">Predictive loading forecast model stabilizing logistics planning.</div>
+<p>Predictive capacity stabilization model.</p>
+<div class="kpi-badges">
+<span>Urgent Shipments ↓</span>
+</div>
 </div>
 
-<div class="timeline-item">
+<div class="project-card">
 <h4>Azure Data Lake + Databricks</h4>
-<div class="kpi-badges"><span>Single Source of Truth</span><span>Executive BI</span></div>
-<div class="timeline-detail">Enterprise data backbone consolidating reporting and analytics.</div>
+<p>Enterprise data backbone and executive BI dashboards.</p>
+<div class="kpi-badges">
+<span>Single Source of Truth</span>
+</div>
 </div>
 
-<div class="timeline-item">
+<div class="project-card">
 <h4>o9 Global Planning Platform</h4>
-<div class="kpi-badges"><span>77% → 93%</span><span>$1.5M Savings</span></div>
-<div class="timeline-detail">End-to-end planning backbone across global operations.</div>
-</div>
-
-<div class="timeline-item">
-<h4>Agentic AI – Stock Obsolescence</h4>
-<div class="kpi-badges"><span>$1.2M Case</span><span>Predictive Decisions</span></div>
-<div class="timeline-detail">AI-driven proactive stock optimization and write-off prevention.</div>
-</div>
-
+<p>End-to-end global planning backbone.</p>
+<div class="kpi-badges">
+<span>77% → 93%</span>
+<span>$1.5M</span>
 </div>
 </div>
 
+<div class="project-card">
+<h4>Agentic AI – Stock Optimization</h4>
+<p>Autonomous decision-support reducing write-offs.</p>
+<div class="kpi-badges">
+<span>$1.2M Case</span>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- EMCO -->
 <div class="project-company">
 <div class="company-header">
 <img src="emco.png" alt="Emco">
 <p class="company-description">Active operational transformation program.</p>
 </div>
 
-<div class="active-program">
-<div class="active-card">
+<div class="project-grid">
+<div class="project-card">
 <h4>PLM – Product Lifecycle Management</h4>
-<p>Integrated lifecycle governance from idea generation to shop floor execution.</p>
+<p>Integrated lifecycle governance from idea to shop floor.</p>
 </div>
-<div class="active-card">
+<div class="project-card">
 <h4>APS – Advanced Planning System</h4>
-<p>Structured planning architecture improving forecast and production stability.</p>
+<p>Improved forecast accuracy and operational alignment.</p>
 </div>
 </div>
 </div>
@@ -261,7 +285,7 @@ ctx.fillStyle="rgba(255,255,255,.3)";
 ctx.beginPath();ctx.arc(d.x,d.y,1.5,0,Math.PI*2);ctx.fill()});
 requestAnimationFrame(a)})();
 
-// COUNT UP (NO FLICKER)
+// COUNT UP FIX
 const counters=document.querySelectorAll('.impact-number');
 function animateCounter(counter){
 if(counter.dataset.animated==="true")return;
@@ -289,11 +313,6 @@ observer.disconnect();
 });
 },{threshold:.6});
 observer.observe(document.querySelector('#impact'));
-
-// Expand timeline
-document.querySelectorAll('.timeline-item').forEach(item=>{
-item.addEventListener('click',()=>item.classList.toggle('active'));
-});
 </script>
 
 </body>
