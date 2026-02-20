@@ -13,8 +13,6 @@ body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff}
 /* NAV */
 .nav{background:#020617;position:sticky;top:0;z-index:10}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;height:64px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-icon{width:34px;height:34px}
 .brand-text{font-weight:700;font-size:1.1rem}
 .xec{color:#fff}.labs{color:#3aa0ff}
 .nav-links{list-style:none;display:flex;gap:24px}
@@ -33,54 +31,61 @@ body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff}
 .section{padding:120px 0}
 .section.light{background:#f8fafc}
 h2{font-size:2.4rem;margin-bottom:30px}
-.lead{font-size:1.2rem;margin-bottom:16px}
 
-/* WHO */
-.who-layout{display:grid;grid-template-columns:2fr 1.2fr;gap:48px}
-.who-card{background:#fff;padding:28px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.06);margin-bottom:20px}
-
-/* WHAT */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-top:40px}
-.service-card{position:relative;background:#fff;padding:32px 28px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.08);transition:.3s}
-.service-card:hover{transform:translateY(-6px)}
-.service-line{position:absolute;top:0;left:0;height:5px;width:100%;border-radius:12px 12px 0 0}
-.blue .service-line{background:#2563eb}
-.purple .service-line{background:#7c3aed}
-.green .service-line{background:#059669}
-.orange .service-line{background:#ea580c}
+/* PREMIUM WHO */
+.who-wrapper{
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:80px;
+align-items:center;
+}
+.who-accent{
+width:60px;height:4px;
+background:linear-gradient(90deg,#3aa0ff,#7c3aed);
+margin-bottom:30px;border-radius:4px;
+}
+.who-lead{font-size:1.4rem;font-weight:600;margin-bottom:24px}
+.who-left p{margin-bottom:16px;opacity:.85}
+.who-feature{
+padding:28px;border-radius:16px;
+background:linear-gradient(145deg,#ffffff,#f1f5f9);
+box-shadow:0 12px 35px rgba(0,0,0,.06);
+transition:.3s ease;margin-bottom:20px;
+}
+.who-feature:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(0,0,0,.1)}
+.who-feature h4{
+margin-bottom:10px;
+background:linear-gradient(90deg,#3aa0ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
 /* IMPACT */
 .impact{
-  background:radial-gradient(circle at top left,#111827,#020617 70%);
-  color:#fff;
+background:radial-gradient(circle at top left,#111827,#020617 70%);
+color:#fff;
 }
 .impact-frame{
-  border:1px solid rgba(255,255,255,.08);
-  padding:90px 60px;
-  border-radius:20px;
-  background:rgba(255,255,255,.03);
-  backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.08);
+padding:90px 60px;
+border-radius:20px;
+background:rgba(255,255,255,.03);
+backdrop-filter:blur(10px);
 }
 .impact-title{text-align:center;margin-bottom:80px;font-size:2.5rem}
 .impact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:60px;
-  text-align:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:60px;text-align:center;
 }
 .impact-number{
-  font-size:3.8rem;
-  font-weight:700;
-  background:linear-gradient(90deg,#3aa0ff,#7c3aed);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  margin-bottom:12px;
+font-size:3.8rem;font-weight:700;
+background:linear-gradient(90deg,#3aa0ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:12px;
 }
-.impact-subtext{
-  text-align:center;
-  margin-top:70px;
-  opacity:.6;
-}
+.impact-subtext{text-align:center;margin-top:70px;opacity:.6}
 
 /* PROJECTS */
 .projects-logos{display:flex;gap:80px;align-items:center;margin-top:50px;flex-wrap:wrap}
@@ -95,7 +100,7 @@ h2{font-size:2.4rem;margin-bottom:30px}
 footer{text-align:center;padding:40px;color:#666}
 
 @media(max-width:900px){
-.who-layout{grid-template-columns:1fr}
+.who-wrapper{grid-template-columns:1fr}
 .hero-title{font-size:2.6rem}
 }
 </style>
@@ -104,96 +109,115 @@ footer{text-align:center;padding:40px;color:#666}
 <body>
 
 <nav class="nav">
-  <div class="container nav-inner">
-    <div class="brand">
-      <span class="brand-text"><span class="xec">Xec</span><span class="labs">Labs</span></span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#who">Who we are</a></li>
-      <li><a href="#what">What we do</a></li>
-      <li><a href="#impact">Impact</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact" class="nav-cta">Contact</a></li>
-    </ul>
-  </div>
+<div class="container nav-inner">
+<div class="brand-text"><span class="xec">Xec</span><span class="labs">Labs</span></div>
+<ul class="nav-links">
+<li><a href="#who">Who</a></li>
+<li><a href="#impact">Impact</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact" class="nav-cta">Contact</a></li>
+</ul>
+</div>
 </nav>
 
 <header class="hero">
-  <canvas id="bg-canvas"></canvas>
-  <div class="container">
-    <h1 class="hero-title"><span class="xec">Xec</span><span class="labs">Labs</span></h1>
-    <p class="tagline">From complexity to execution.</p>
-    <p class="subtitle">Digital transformation, automation and delivery that actually works.</p>
-    <a href="#contact" class="cta">Start a conversation</a>
-  </div>
+<canvas id="bg-canvas"></canvas>
+<div class="container">
+<h1 class="hero-title"><span class="xec">Xec</span><span class="labs">Labs</span></h1>
+<p class="tagline">From complexity to execution.</p>
+<p class="subtitle">Digital transformation, automation and delivery that actually works.</p>
+<a href="#contact" class="cta">Start a conversation</a>
+</div>
 </header>
 
 <section id="who" class="section">
-  <div class="container who-layout">
-    <div>
-      <h2>Who we are</h2>
-      <p class="lead">Senior transformation leadership across digital, automation and enterprise planning.</p>
-      <p>10+ years delivering measurable business impact across global environments.</p>
-    </div>
-    <div>
-      <div class="who-card"><strong>10M+ USD</strong><br>Business value delivered</div>
-      <div class="who-card"><strong>40+ Countries</strong><br>Global rollout experience</div>
-      <div class="who-card"><strong>Enterprise AI & Automation</strong><br>From RPA to Agentic AI</div>
-    </div>
-  </div>
+<div class="container who-wrapper">
+
+<div class="who-left">
+<div class="who-accent"></div>
+<h2>Who We Are</h2>
+<p class="who-lead">
+Boutique transformation partner focused on execution at enterprise scale.
+</p>
+<p>
+We combine digital architecture, automation strategy and hands-on program delivery
+to ensure complex initiatives move beyond slide decks and into measurable results.
+</p>
+<p>
+Senior-level ownership. No delivery layers. Clear accountability.
+</p>
+</div>
+
+<div>
+<div class="who-feature">
+<h4>10+ Years</h4>
+<p>Enterprise transformation leadership across global environments.</p>
+</div>
+<div class="who-feature">
+<h4>AI & Automation</h4>
+<p>From RPA to Agentic AI and predictive decision support.</p>
+</div>
+<div class="who-feature">
+<h4>Execution Focus</h4>
+<p>Measured outcomes and real adoption.</p>
+</div>
+</div>
+
+</div>
 </section>
 
 <section id="impact" class="section impact">
-  <div class="container">
-    <div class="impact-frame">
-      <h2 class="impact-title">Impact Delivered</h2>
+<div class="container">
+<div class="impact-frame">
+<h2 class="impact-title">Impact Delivered</h2>
 
-      <div class="impact-grid">
-        <div>
-          <div class="impact-number" data-target="10" data-prefix="$" data-suffix="M+">0</div>
-          <p>Direct Business Value</p>
-        </div>
-        <div>
-          <div class="impact-number" data-target="40" data-suffix="+">0</div>
-          <p>Countries Impacted</p>
-        </div>
-        <div>
-          <div class="impact-number" data-target="57" data-suffix="%">0</div>
-          <p>Touchless Automation</p>
-        </div>
-        <div>
-          <div class="impact-number" data-target="93" data-suffix="%">0</div>
-          <p>System Stability</p>
-        </div>
-      </div>
+<div class="impact-grid">
+<div>
+<div class="impact-number" data-target="10" data-prefix="$" data-suffix="M+">0</div>
+<p>Direct Business Value</p>
+</div>
+<div>
+<div class="impact-number" data-target="40" data-suffix="+">0</div>
+<p>Countries Impacted</p>
+</div>
+<div>
+<div class="impact-number" data-target="57" data-suffix="%">0</div>
+<p>Touchless Automation</p>
+</div>
+<div>
+<div class="impact-number" data-target="93" data-suffix="%">0</div>
+<p>System Stability</p>
+</div>
+</div>
 
-      <div class="impact-subtext">
-        Enterprise-scale transformation across logistics, AI enablement and data platforms.
-      </div>
-    </div>
-  </div>
+<div class="impact-subtext">
+Enterprise-scale transformation across logistics, AI enablement and data platforms.
+</div>
+
+</div>
+</div>
 </section>
 
 <section id="projects" class="section">
-  <div class="container">
-    <h2>Selected Projects</h2>
-    <div class="projects-logos">
-      <div class="project-logo">
-        <img src="abinbev.png" alt="AB InBev">
-      </div>
-      <div class="project-logo">
-        <img src="emco.png" alt="Emco">
-      </div>
-    </div>
-  </div>
+<div class="container">
+<h2>Selected Projects</h2>
+<div class="projects-logos">
+<div class="project-logo">
+<img src="abinbev.png" alt="AB InBev">
+</div>
+<div class="project-logo">
+<img src="emco.png" alt="Emco">
+</div>
+</div>
+</div>
 </section>
 
 <section id="contact" class="section light">
-  <div class="container">
-    <h2>Contact</h2>
-    <p>Prague · Czech Republic · Europe<br>
-    <strong><a href="mailto:Michal.Broz@XecLabs.eu">Michal.Broz@XecLabs.eu</a></strong></p>
-  </div>
+<div class="container">
+<h2>Contact</h2>
+<p>Prague · Czech Republic · Europe<br>
+<strong><a href="mailto:Michal.Broz@XecLabs.eu">Michal.Broz@XecLabs.eu</a></strong></p>
+</div>
 </section>
 
 <footer>© 2026 XecLabs</footer>
