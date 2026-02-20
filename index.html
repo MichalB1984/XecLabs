@@ -81,7 +81,8 @@ margin-bottom:14px;
 background:linear-gradient(90deg,#3aa0ff,#7c3aed);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent}
-.kpi-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.project-card p{font-size:.9rem;opacity:.85;margin-bottom:10px}
+.kpi-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .kpi-badges span{
 padding:6px 12px;font-size:.75rem;border-radius:20px;
 background:rgba(58,160,255,.08);
@@ -121,7 +122,6 @@ Business process transformation powered by technology, automation and AI — exe
 </div>
 </header>
 
-<!-- WHO -->
 <section id="who" class="section">
 <div class="container who-wrapper">
 <div class="who-left">
@@ -154,7 +154,6 @@ Senior accountability. Structured execution. Sustainable measurable impact.
 </div>
 </section>
 
-<!-- IMPACT -->
 <section id="impact" class="section impact">
 <div class="container">
 <div class="impact-frame">
@@ -169,7 +168,6 @@ Senior accountability. Structured execution. Sustainable measurable impact.
 </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="section">
 <div class="container">
 <h2>Transformation Portfolio</h2>
@@ -177,31 +175,123 @@ Senior accountability. Structured execution. Sustainable measurable impact.
 <div class="project-company">
 <div class="company-header">
 <img src="abinbev.png" alt="AB InBev">
-<p class="company-description">Global transformation across logistics, planning, automation and AI.</p>
+<p class="company-description">Enterprise transformation programs delivered across logistics, data, automation and AI.</p>
 </div>
+
 <div class="project-grid">
+
+<div class="project-card">
+<h4>Weight per Shipment Optimization</h4>
+<p>Lean Six Sigma redesign of shipment behavior and transport utilization.</p>
+<div class="kpi-badges">
+<span>$150K Annual</span>
+<span>Higher Utilization</span>
+</div>
+</div>
+
+<div class="project-card">
+<h4>SAP XI → SAP PO Migration</h4>
+<p>Centralized integration architecture and governance model.</p>
+<div class="kpi-badges">
+<span>Reduced Incidents</span>
+<span>Higher Stability</span>
+</div>
+</div>
+
 <div class="project-card">
 <h4>European TMS – Blue Yonder</h4>
-<p>Multi-country logistics transformation and automation.</p>
-<div class="kpi-badges"><span>57% Touchless</span><span>+12% OTIF</span></div>
+<p>Multi-country logistics automation and process standardization.</p>
+<div class="kpi-badges">
+<span>57% Touchless</span>
+<span>+12% OTIF</span>
 </div>
+</div>
+
+<div class="project-card">
+<h4>NLP + Outlook + RPA Automation</h4>
+<p>Email classification and automated TMS updates via RPA bots.</p>
+<div class="kpi-badges">
+<span>FTE Savings</span>
+<span>Lower Error Rate</span>
+</div>
+</div>
+
+<div class="project-card">
+<h4>Global Document Management System</h4>
+<p>Enterprise DMS platform and workflow governance model.</p>
+<div class="kpi-badges">
+<span>+6% FTR</span>
+<span>Audit Ready</span>
+</div>
+</div>
+
+<div class="project-card">
+<h4>Complaints Portal (PWA) + RPA</h4>
+<p>Digital customer portal integrated with backend automation.</p>
+<div class="kpi-badges">
+<span>Faster Resolution</span>
+<span>Lower Processing Cost</span>
+</div>
+</div>
+
+<div class="project-card">
+<h4>Workflow Apps (PowerApps Suite)</h4>
+<p>Low-code approval and master data workflows.</p>
+<div class="kpi-badges">
+<span>Faster Approvals</span>
+<span>Lower Error Rate</span>
+</div>
+</div>
+
+<div class="project-card">
+<h4>Smart Inventory Management (Data Science)</h4>
+<p>Predictive inventory optimization using ML models.</p>
+<div class="kpi-badges">
+<span>Lower Working Capital</span>
+<span>Higher Service Level</span>
+</div>
+</div>
+
+<div class="project-card">
+<h4>Loading Forecast Model</h4>
+<p>Predictive capacity planning for transport volumes.</p>
+<div class="kpi-badges">
+<span>Lower Urgent Shipments</span>
+</div>
+</div>
+
+<div class="project-card">
+<h4>Azure Data Lake + Databricks + BI Command Center</h4>
+<p>Enterprise data backbone and executive dashboards.</p>
+<div class="kpi-badges">
+<span>Single Source of Truth</span>
+</div>
+</div>
+
 <div class="project-card">
 <h4>o9 Global Planning Platform</h4>
-<p>End-to-end global planning backbone.</p>
-<div class="kpi-badges"><span>77% → 93%</span><span>$1.5M</span></div>
+<p>End-to-end planning integration and stability uplift.</p>
+<div class="kpi-badges">
+<span>77% → 93%</span>
+<span>$1.5M Savings</span>
 </div>
+</div>
+
 <div class="project-card">
-<h4>Agentic AI – Stock Optimization</h4>
-<p>Autonomous decision-support reducing write-offs.</p>
-<div class="kpi-badges"><span>$1.2M Case</span></div>
+<h4>Agentic AI – Stock Obsolescence</h4>
+<p>AI-driven redistribution and optimization engine.</p>
+<div class="kpi-badges">
+<span>$1.2M Case</span>
 </div>
+</div>
+
 </div>
 </div>
 
 <div class="project-company">
 <div class="company-header">
 <img src="emco.png" alt="Emco">
-<p class="company-description">Active operational transformation program.</p>
+<p class="company-description">Current transformation initiatives.</p>
 </div>
 <div class="project-grid">
 <div class="project-card">
@@ -218,7 +308,6 @@ Senior accountability. Structured execution. Sustainable measurable impact.
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section light">
 <div class="container">
 <h2>Contact</h2>
@@ -232,7 +321,6 @@ Prague · Czech Republic · Europe<br>
 <footer>© 2026 XecLabs</footer>
 
 <script>
-// HERO ANIMATION
 const c=document.getElementById("bg-canvas"),
 ctx=c.getContext("2d"),
 h=document.querySelector(".hero");
@@ -250,35 +338,6 @@ ctx.beginPath();ctx.arc(d.x,d.y,1.5,0,Math.PI*2);ctx.fill()
 });
 requestAnimationFrame(a)
 })();
-
-// COUNT UP FIX
-const counters=document.querySelectorAll('.impact-number');
-function animateCounter(counter){
-if(counter.dataset.animated==="true")return;
-counter.dataset.animated="true";
-const target=+counter.dataset.target;
-const prefix=counter.dataset.prefix||'';
-const suffix=counter.dataset.suffix||'';
-const duration=1400;
-const startTime=performance.now();
-function update(currentTime){
-const progress=Math.min((currentTime-startTime)/duration,1);
-const value=Math.floor(progress*target);
-counter.textContent=prefix+value+suffix;
-if(progress<1){requestAnimationFrame(update)}
-else{counter.textContent=prefix+target+suffix}
-}
-requestAnimationFrame(update);
-}
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-counters.forEach(counter=>animateCounter(counter));
-observer.disconnect();
-}
-});
-},{threshold:.6});
-observer.observe(document.querySelector('#impact'));
 </script>
 
 </body>
