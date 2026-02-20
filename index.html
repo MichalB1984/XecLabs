@@ -7,66 +7,139 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff}
+body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff;scroll-behavior:smooth}
 .container{max-width:1150px;margin:auto;padding:0 24px}
 
 /* NAV */
-.nav{background:#020617;position:sticky;top:0;z-index:10}
+.nav{background:#020617;position:sticky;top:0;z-index:100}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;height:64px}
 .brand-text{font-weight:700;font-size:1.1rem}
 .xec{color:#fff}.labs{color:#3aa0ff}
 .nav-links{list-style:none;display:flex;gap:24px}
 .nav-links a{color:#cbd5f5;text-decoration:none}
-.nav-cta{background:#2563eb;padding:8px 16px;border-radius:6px;color:#fff}
 
 /* HERO */
-.hero{position:relative;background:linear-gradient(135deg,#0f172a,#020617);color:#fff;padding:140px 0;text-align:center;overflow:hidden}
+.hero{position:relative;background:linear-gradient(135deg,#0f172a,#020617);color:#fff;padding:160px 0;text-align:center;overflow:hidden}
 #bg-canvas{position:absolute;inset:0;z-index:0}
 .hero-title{font-size:3.6rem}
-.tagline{font-size:1.3rem;margin-top:16px}
-.subtitle{max-width:700px;margin:14px auto;opacity:.85}
+.subtitle{max-width:700px;margin:20px auto;opacity:.85}
 .cta{display:inline-block;margin-top:32px;padding:14px 28px;background:#2563eb;color:#fff;text-decoration:none;border-radius:6px}
 
 /* SECTIONS */
-.section{padding:120px 0}
-.section.light{background:#f8fafc}
-h2{font-size:2.4rem;margin-bottom:30px}
+.section{padding:140px 0}
+h2{font-size:2.5rem;margin-bottom:50px}
 
-/* WHO */
-.who-wrapper{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center}
-.who-accent{width:60px;height:4px;background:linear-gradient(90deg,#3aa0ff,#7c3aed);margin-bottom:30px;border-radius:4px}
-.who-lead{font-size:1.4rem;font-weight:600;margin-bottom:24px}
-.who-left p{margin-bottom:16px;opacity:.85}
-.who-feature{padding:28px;border-radius:16px;background:linear-gradient(145deg,#ffffff,#f1f5f9);box-shadow:0 12px 35px rgba(0,0,0,.06);transition:.3s;margin-bottom:20px}
-.who-feature:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(0,0,0,.1)}
-.who-feature h4{margin-bottom:10px;background:linear-gradient(90deg,#3aa0ff,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-
-/* IMPACT */
-.impact{background:radial-gradient(circle at top left,#111827,#020617 70%);color:#fff}
-.impact-frame{border:1px solid rgba(255,255,255,.08);padding:90px 60px;border-radius:20px;background:rgba(255,255,255,.03);backdrop-filter:blur(10px)}
-.impact-title{text-align:center;margin-bottom:80px;font-size:2.5rem}
-.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:60px;text-align:center}
-.impact-number{font-size:3.8rem;font-weight:700;background:linear-gradient(90deg,#3aa0ff,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
-.impact-subtext{text-align:center;margin-top:70px;opacity:.6}
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.active{opacity:1;transform:translateY(0)}
 
 /* PROJECTS */
-.project-company{margin-top:100px}
-.company-header{margin-bottom:40px}
-.company-header img{max-height:70px}
-.company-note{margin-top:-20px;margin-bottom:30px;opacity:.7;font-size:.95rem}
-.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
-.project-card{padding:24px;border-radius:14px;border:1px solid rgba(0,0,0,.08);background:#fff;transition:.3s}
-.project-card:hover{transform:translateY(-6px);box-shadow:0 14px 35px rgba(0,0,0,.08)}
-.project-card h4{margin-bottom:10px;background:linear-gradient(90deg,#3aa0ff,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.project-card p{font-size:.9rem;opacity:.8}
+.project-company{margin-top:120px}
+.company-header img{max-height:70px;margin-bottom:16px}
+.company-description{opacity:.7;margin-bottom:60px;max-width:750px}
 
-/* FOOTER */
-footer{text-align:center;padding:40px;color:#666}
-
-@media(max-width:900px){
-.who-wrapper{grid-template-columns:1fr}
-.hero-title{font-size:2.6rem}
+/* Timeline */
+.timeline{
+position:relative;
+padding-left:50px;
+display:grid;
+gap:60px;
 }
+
+.timeline::before{
+content:"";
+position:absolute;
+left:12px;
+top:0;
+width:3px;
+height:100%;
+background:linear-gradient(to bottom,#3aa0ff,transparent);
+animation:glowLine 3s infinite alternate;
+}
+
+@keyframes glowLine{
+0%{box-shadow:0 0 5px #3aa0ff}
+100%{box-shadow:0 0 20px #7c3aed}
+}
+
+.timeline-item{
+position:relative;
+cursor:pointer;
+}
+
+.timeline-item::before{
+content:"";
+position:absolute;
+left:-40px;
+top:8px;
+width:14px;
+height:14px;
+background:#3aa0ff;
+border-radius:50%;
+box-shadow:0 0 12px rgba(58,160,255,.6);
+}
+
+.timeline-item h4{
+margin-bottom:14px;
+background:linear-gradient(90deg,#3aa0ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* KPI badges */
+.kpi-badges{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-bottom:12px;
+}
+
+.kpi-badges span{
+padding:6px 14px;
+font-size:.75rem;
+border-radius:20px;
+background:rgba(58,160,255,.08);
+border:1px solid rgba(58,160,255,.3);
+}
+
+/* Expandable detail */
+.timeline-detail{
+max-height:0;
+overflow:hidden;
+transition:max-height .6s ease;
+opacity:.8;
+}
+
+.timeline-item.active .timeline-detail{
+max-height:200px;
+margin-top:12px;
+}
+
+/* EMCO Active */
+.active-program{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+}
+
+.active-card{
+padding:32px;
+border-radius:18px;
+background:linear-gradient(145deg,#ffffff,#f1f5f9);
+box-shadow:0 15px 40px rgba(0,0,0,.06);
+transition:.3s ease;
+}
+
+.active-card:hover{transform:translateY(-8px)}
+
+.active-card h4{
+margin-bottom:16px;
+background:linear-gradient(90deg,#3aa0ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+footer{text-align:center;padding:50px;color:#666}
 </style>
 </head>
 
@@ -76,10 +149,8 @@ footer{text-align:center;padding:40px;color:#666}
 <div class="container nav-inner">
 <div class="brand-text"><span class="xec">Xec</span><span class="labs">Labs</span></div>
 <ul class="nav-links">
-<li><a href="#who">Who</a></li>
-<li><a href="#impact">Impact</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#contact" class="nav-cta">Contact</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </div>
 </nav>
@@ -88,103 +159,93 @@ footer{text-align:center;padding:40px;color:#666}
 <canvas id="bg-canvas"></canvas>
 <div class="container">
 <h1 class="hero-title"><span class="xec">Xec</span><span class="labs">Labs</span></h1>
-<p class="tagline">From complexity to execution.</p>
 <p class="subtitle">
-Business process transformation powered by technology, automation and AI — executed with senior ownership.
+Enterprise business process transformation powered by technology, automation and AI.
 </p>
-<a href="#contact" class="cta">Start a conversation</a>
+<a href="#projects" class="cta">Explore Portfolio</a>
 </div>
 </header>
 
-<section id="who" class="section">
-<div class="container who-wrapper">
-<div class="who-left">
-<div class="who-accent"></div>
-<h2>Who We Are</h2>
-<p class="who-lead">
-A niche transformation partner focused on business process transformation at enterprise scale.
-</p>
-<p>
-We redesign and optimize core business processes across logistics, planning and operations — leveraging technology and AI as structured performance enablers.
-</p>
-<p>
-Senior accountability. Structured execution. Sustainable operational impact.
-</p>
-</div>
-<div>
-<div class="who-feature">
-<h4>Business Process Transformation</h4>
-<p>End-to-end redesign with measurable KPI uplift.</p>
-</div>
-<div class="who-feature">
-<h4>Technology & AI Enablement</h4>
-<p>Automation, data platforms and AI deployed as performance levers.</p>
-</div>
-<div class="who-feature">
-<h4>Enterprise Execution</h4>
-<p>Global rollouts and real adoption beyond go-live.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="impact" class="section impact">
-<div class="container">
-<div class="impact-frame">
-<h2 class="impact-title">Impact Delivered</h2>
-<div class="impact-grid">
-<div><div class="impact-number" data-target="10" data-prefix="$" data-suffix="M+">0</div><p>Direct Business Value</p></div>
-<div><div class="impact-number" data-target="40" data-suffix="+">0</div><p>Countries Impacted</p></div>
-<div><div class="impact-number" data-target="57" data-suffix="%">0</div><p>Touchless Automation</p></div>
-<div><div class="impact-number" data-target="93" data-suffix="%">0</div><p>System Stability</p></div>
-</div>
-<div class="impact-subtext">
-Enterprise-scale business process transformation across logistics, planning and operations.
-</div>
-</div>
-</div>
-</section>
-
 <section id="projects" class="section">
 <div class="container">
-<h2>Selected Projects</h2>
+<h2 class="reveal">Transformation Portfolio</h2>
 
 <!-- AB INBEV -->
-<div class="project-company">
+<div class="project-company reveal">
 <div class="company-header">
 <img src="abinbev.png" alt="AB InBev">
+<p class="company-description">
+Enterprise-scale logistics, planning and AI transformation across 40+ countries.
+</p>
 </div>
-<div class="project-grid">
-<div class="project-card"><h4>European TMS Transformation</h4><p>57% touchless automation · +12% OTIF · Multi-country rollout</p></div>
-<div class="project-card"><h4>o9 Planning Platform</h4><p>System stability 77% → 93% · $1.5M savings</p></div>
-<div class="project-card"><h4>Agentic AI – Stock Optimization</h4><p>$1.2M business case · Predictive obsolescence management</p></div>
-<div class="project-card"><h4>Azure Data Lake & BI Command Center</h4><p>Enterprise data backbone · Executive dashboards · Single source of truth</p></div>
-<div class="project-card"><h4>NLP + RPA Automation</h4><p>Email-to-TMS automation · Reduced manual workload · Improved SLA adherence</p></div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h4>European TMS Transformation</h4>
+<div class="kpi-badges">
+<span>57% Touchless</span>
+<span>+12% OTIF</span>
+<span>Multi-country rollout</span>
+</div>
+<div class="timeline-detail">
+Full redesign of European transport processes including automation, governance and performance management layer.
+</div>
+</div>
+
+<div class="timeline-item">
+<h4>o9 Planning Platform</h4>
+<div class="kpi-badges">
+<span>77% → 93% Stability</span>
+<span>$1.5M Savings</span>
+</div>
+<div class="timeline-detail">
+End-to-end enterprise planning backbone integrating supply, demand and production streams.
+</div>
+</div>
+
+<div class="timeline-item">
+<h4>Agentic AI – Stock Optimization</h4>
+<div class="kpi-badges">
+<span>$1.2M Business Case</span>
+<span>Predictive AI</span>
+</div>
+<div class="timeline-detail">
+AI-driven recommendations for proactive stock redistribution and write-off prevention.
+</div>
+</div>
+
 </div>
 </div>
 
 <!-- EMCO -->
-<div class="project-company">
+<div class="project-company reveal">
 <div class="company-header">
 <img src="emco.png" alt="Emco">
+<p class="company-description">
+Active transformation program focused on operational excellence and planning maturity.
+</p>
 </div>
-<p class="company-note">Current transformation initiatives</p>
-<div class="project-grid">
-<div class="project-card">
+
+<div class="active-program">
+
+<div class="active-card">
 <h4>PLM – Product Lifecycle Management</h4>
-<p>End-to-end process integration from idea generation to shop floor execution.</p>
+<p>Integrated lifecycle process from idea generation to shop floor execution ensuring governance and transparency.</p>
 </div>
-<div class="project-card">
+
+<div class="active-card">
 <h4>APS – Advanced Planning System</h4>
-<p>Integrated planning environment enabling improved forecast accuracy and operational alignment.</p>
+<p>Structured planning framework improving forecast accuracy and production stability.</p>
 </div>
+
 </div>
 </div>
 
 </div>
 </section>
 
-<section id="contact" class="section light">
+<section id="contact" class="section">
 <div class="container">
 <h2>Contact</h2>
 <p>Prague · Czech Republic · Europe<br>
@@ -195,46 +256,34 @@ Enterprise-scale business process transformation across logistics, planning and 
 <footer>© 2026 XecLabs</footer>
 
 <script>
-// HERO ANIMATION
+// HERO BACKGROUND ANIMATION
 const c=document.getElementById("bg-canvas"),ctx=c.getContext("2d"),h=document.querySelector(".hero");
 function r(){c.width=h.offsetWidth;c.height=h.offsetHeight}
 r();window.addEventListener("resize",r);
-const p=[...Array(60)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3}));
+const p=[...Array(50)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3}));
 (function a(){ctx.clearRect(0,0,c.width,c.height);
 p.forEach(d=>{d.x+=d.vx;d.y+=d.vy;
 if(d.x<0||d.x>c.width)d.vx*=-1;
 if(d.y<0||d.y>c.height)d.vy*=-1;
-ctx.fillStyle="rgba(255,255,255,.4)";
+ctx.fillStyle="rgba(255,255,255,.3)";
 ctx.beginPath();ctx.arc(d.x,d.y,1.5,0,Math.PI*2);ctx.fill()});
 requestAnimationFrame(a)})();
 
-// COUNT UP
-const counters=document.querySelectorAll('.impact-number');
-const observer=new IntersectionObserver(entries=>{
+// SCROLL REVEAL
+const reveals=document.querySelectorAll('.reveal');
+const revealObserver=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-counters.forEach(counter=>{
-const target=+counter.dataset.target;
-const prefix=counter.dataset.prefix||'';
-const suffix=counter.dataset.suffix||'';
-let count=0;
-const step=target/120;
-function update(){
-if(count<target){
-count+=step;
-counter.innerText=prefix+Math.ceil(count)+suffix;
-requestAnimationFrame(update);
-}else{
-counter.innerText=prefix+target+suffix;
-}
-}
-update();
+if(entry.isIntersecting){entry.target.classList.add('active')}
 });
-observer.disconnect();
-}
+},{threshold:.15});
+reveals.forEach(r=>revealObserver.observe(r));
+
+// EXPAND TIMELINE
+document.querySelectorAll('.timeline-item').forEach(item=>{
+item.addEventListener('click',()=>{
+item.classList.toggle('active');
 });
-},{threshold:.5});
-observer.observe(document.querySelector('#impact'));
+});
 </script>
 
 </body>
