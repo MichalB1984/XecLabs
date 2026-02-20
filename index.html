@@ -7,11 +7,11 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff}
+body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff;scroll-behavior:smooth}
 .container{max-width:1150px;margin:auto;padding:0 24px}
 
 /* NAV */
-.nav{background:#020617;position:sticky;top:0;z-index:10}
+.nav{background:#020617;position:sticky;top:0;z-index:100}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;height:64px}
 .brand-text{font-weight:700;font-size:1.1rem}
 .xec{color:#fff}.labs{color:#3aa0ff}
@@ -37,36 +37,28 @@ h2{font-size:2.4rem;margin-bottom:40px}
 .who-lead{font-size:1.4rem;font-weight:600;margin-bottom:24px}
 .who-left p{margin-bottom:16px;opacity:.85}
 .who-feature{
-padding:28px;
-border-radius:16px;
+padding:28px;border-radius:16px;
 background:linear-gradient(145deg,#ffffff,#f1f5f9);
 box-shadow:0 12px 35px rgba(0,0,0,.06);
-transition:.3s;
-margin-bottom:20px
-}
+transition:.3s;margin-bottom:20px}
 .who-feature:hover{
 transform:translateY(-6px);
-box-shadow:0 18px 45px rgba(0,0,0,.1)
-}
+box-shadow:0 18px 45px rgba(0,0,0,.1)}
 .who-feature h4{
 margin-bottom:10px;
 background:linear-gradient(90deg,#3aa0ff,#7c3aed);
 -webkit-background-clip:text;
--webkit-text-fill-color:transparent
-}
+-webkit-text-fill-color:transparent}
 
 /* IMPACT */
 .impact{background:radial-gradient(circle at top left,#111827,#020617 70%);color:#fff}
 .impact-frame{border:1px solid rgba(255,255,255,.08);padding:90px 60px;border-radius:20px;background:rgba(255,255,255,.03)}
 .impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:60px;text-align:center}
 .impact-number{
-font-size:3.8rem;
-font-weight:700;
+font-size:3.8rem;font-weight:700;
 background:linear-gradient(90deg,#3aa0ff,#7c3aed);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:12px
-}
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+margin-bottom:12px}
 
 /* PROJECTS */
 .project-company{margin-top:100px}
@@ -75,38 +67,25 @@ margin-bottom:12px
 .project-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:28px
-}
+gap:28px}
 .project-card{
-padding:28px;
-border-radius:18px;
+padding:28px;border-radius:18px;
 background:linear-gradient(145deg,#ffffff,#f1f5f9);
 box-shadow:0 15px 40px rgba(0,0,0,.06);
-transition:.3s ease
-}
+transition:.3s}
 .project-card:hover{
 transform:translateY(-8px);
-box-shadow:0 20px 50px rgba(0,0,0,.1)
-}
+box-shadow:0 20px 50px rgba(0,0,0,.1)}
 .project-card h4{
 margin-bottom:14px;
 background:linear-gradient(90deg,#3aa0ff,#7c3aed);
 -webkit-background-clip:text;
--webkit-text-fill-color:transparent
-}
-.kpi-badges{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-top:12px
-}
+-webkit-text-fill-color:transparent}
+.kpi-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .kpi-badges span{
-padding:6px 12px;
-font-size:.75rem;
-border-radius:20px;
+padding:6px 12px;font-size:.75rem;border-radius:20px;
 background:rgba(58,160,255,.08);
-border:1px solid rgba(58,160,255,.3)
-}
+border:1px solid rgba(58,160,255,.3)}
 
 footer{text-align:center;padding:40px;color:#666}
 
@@ -123,7 +102,7 @@ footer{text-align:center;padding:40px;color:#666}
 <div class="container nav-inner">
 <div class="brand-text"><span class="xec">Xec</span><span class="labs">Labs</span></div>
 <ul class="nav-links">
-<li><a href="#who">Who</a></li>
+<li><a href="#who">Who We Are</a></li>
 <li><a href="#impact">Impact</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -138,9 +117,7 @@ footer{text-align:center;padding:40px;color:#666}
 <p class="subtitle">
 Business process transformation powered by technology, automation and AI — executed with senior ownership.
 </p>
-<a href="mailto:Michal.Broz@XecLabs.eu?subject=Inquiry%20from%20XecLabs%20Website" class="cta">
-Contact
-</a>
+<a href="#contact" class="cta">Contact</a>
 </div>
 </header>
 
@@ -160,7 +137,6 @@ We redesign and optimize logistics, planning and operational processes leveragin
 Senior accountability. Structured execution. Sustainable measurable impact.
 </p>
 </div>
-
 <div>
 <div class="who-feature">
 <h4>Business Process Transformation</h4>
@@ -178,75 +154,7 @@ Senior accountability. Structured execution. Sustainable measurable impact.
 </div>
 </section>
 
-<!-- IMPACT -->
-<section id="impact" class="section impact">
-<div class="container">
-<div class="impact-frame">
-<h2>Impact Delivered</h2>
-<div class="impact-grid">
-<div><div class="impact-number" data-target="10" data-prefix="$" data-suffix="M+">0</div><p>Direct Business Value</p></div>
-<div><div class="impact-number" data-target="40" data-suffix="+">0</div><p>Countries Impacted</p></div>
-<div><div class="impact-number" data-target="57" data-suffix="%">0</div><p>Touchless Automation</p></div>
-<div><div class="impact-number" data-target="93" data-suffix="%">0</div><p>System Stability</p></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section light">
-<div class="container">
-<h2>Contact</h2>
-<p>Prague · Czech Republic · Europe<br>
-<strong><a href="mailto:Michal.Broz@XecLabs.eu">Michal.Broz@XecLabs.eu</a></strong></p>
-</div>
-</section>
-
 <footer>© 2026 XecLabs</footer>
-
-<script>
-// HERO ANIMATION
-const c=document.getElementById("bg-canvas"),ctx=c.getContext("2d"),h=document.querySelector(".hero");
-function r(){c.width=h.offsetWidth;c.height=h.offsetHeight}
-r();window.addEventListener("resize",r);
-const p=[...Array(50)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3}));
-(function a(){ctx.clearRect(0,0,c.width,c.height);
-p.forEach(d=>{d.x+=d.vx;d.y+=d.vy;
-if(d.x<0||d.x>c.width)d.vx*=-1;
-if(d.y<0||d.y>c.height)d.vy*=-1;
-ctx.fillStyle="rgba(255,255,255,.3)";
-ctx.beginPath();ctx.arc(d.x,d.y,1.5,0,Math.PI*2);ctx.fill()});
-requestAnimationFrame(a)})();
-
-// COUNT UP FIX
-const counters=document.querySelectorAll('.impact-number');
-function animateCounter(counter){
-if(counter.dataset.animated==="true")return;
-counter.dataset.animated="true";
-const target=+counter.dataset.target;
-const prefix=counter.dataset.prefix||'';
-const suffix=counter.dataset.suffix||'';
-const duration=1400;
-const startTime=performance.now();
-function update(currentTime){
-const progress=Math.min((currentTime-startTime)/duration,1);
-const value=Math.floor(progress*target);
-counter.textContent=prefix+value+suffix;
-if(progress<1){requestAnimationFrame(update)}
-else{counter.textContent=prefix+target+suffix}
-}
-requestAnimationFrame(update);
-}
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-counters.forEach(counter=>animateCounter(counter));
-observer.disconnect();
-}
-});
-},{threshold:.6});
-observer.observe(document.querySelector('#impact'));
-</script>
 
 </body>
 </html>
