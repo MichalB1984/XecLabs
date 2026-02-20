@@ -17,6 +17,7 @@ body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff}
 .xec{color:#fff}.labs{color:#3aa0ff}
 .nav-links{list-style:none;display:flex;gap:24px}
 .nav-links a{color:#cbd5f5;text-decoration:none}
+.nav-cta{background:#2563eb;padding:8px 16px;border-radius:6px;color:#fff}
 
 /* HERO */
 .hero{position:relative;background:linear-gradient(135deg,#0f172a,#020617);color:#fff;padding:140px 0;text-align:center;overflow:hidden}
@@ -27,25 +28,55 @@ body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff}
 
 /* SECTIONS */
 .section{padding:120px 0}
-h2{font-size:2.4rem;margin-bottom:50px}
+.section.light{background:#f8fafc}
+h2{font-size:2.4rem;margin-bottom:40px}
+
+/* WHO */
+.who-wrapper{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center}
+.who-accent{width:60px;height:4px;background:linear-gradient(90deg,#3aa0ff,#7c3aed);margin-bottom:30px;border-radius:4px}
+.who-lead{font-size:1.4rem;font-weight:600;margin-bottom:24px}
+.who-left p{margin-bottom:16px;opacity:.85}
+.who-feature{
+padding:28px;
+border-radius:16px;
+background:linear-gradient(145deg,#ffffff,#f1f5f9);
+box-shadow:0 12px 35px rgba(0,0,0,.06);
+transition:.3s;
+margin-bottom:20px
+}
+.who-feature:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 45px rgba(0,0,0,.1)
+}
+.who-feature h4{
+margin-bottom:10px;
+background:linear-gradient(90deg,#3aa0ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent
+}
 
 /* IMPACT */
 .impact{background:radial-gradient(circle at top left,#111827,#020617 70%);color:#fff}
 .impact-frame{border:1px solid rgba(255,255,255,.08);padding:90px 60px;border-radius:20px;background:rgba(255,255,255,.03)}
 .impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:60px;text-align:center}
-.impact-number{font-size:3.8rem;font-weight:700;background:linear-gradient(90deg,#3aa0ff,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+.impact-number{
+font-size:3.8rem;
+font-weight:700;
+background:linear-gradient(90deg,#3aa0ff,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:12px
+}
 
 /* PROJECTS */
 .project-company{margin-top:100px}
 .company-header img{max-height:70px;margin-bottom:20px}
 .company-description{opacity:.7;margin-bottom:50px}
-
 .project-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:28px
 }
-
 .project-card{
 padding:28px;
 border-radius:18px;
@@ -53,35 +84,36 @@ background:linear-gradient(145deg,#ffffff,#f1f5f9);
 box-shadow:0 15px 40px rgba(0,0,0,.06);
 transition:.3s ease
 }
-
 .project-card:hover{
 transform:translateY(-8px);
 box-shadow:0 20px 50px rgba(0,0,0,.1)
 }
-
 .project-card h4{
 margin-bottom:14px;
 background:linear-gradient(90deg,#3aa0ff,#7c3aed);
 -webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+-webkit-text-fill-color:transparent
 }
-
 .kpi-badges{
 display:flex;
 flex-wrap:wrap;
 gap:8px;
 margin-top:12px
 }
-
 .kpi-badges span{
 padding:6px 12px;
 font-size:.75rem;
 border-radius:20px;
 background:rgba(58,160,255,.08);
-border:1px solid rgba(58,160,255,.3);
+border:1px solid rgba(58,160,255,.3)
 }
 
 footer{text-align:center;padding:40px;color:#666}
+
+@media(max-width:900px){
+.who-wrapper{grid-template-columns:1fr}
+.hero-title{font-size:2.6rem}
+}
 </style>
 </head>
 
@@ -91,9 +123,10 @@ footer{text-align:center;padding:40px;color:#666}
 <div class="container nav-inner">
 <div class="brand-text"><span class="xec">Xec</span><span class="labs">Labs</span></div>
 <ul class="nav-links">
+<li><a href="#who">Who</a></li>
 <li><a href="#impact">Impact</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#contact" class="nav-cta">Contact</a></li>
 </ul>
 </div>
 </nav>
@@ -102,11 +135,50 @@ footer{text-align:center;padding:40px;color:#666}
 <canvas id="bg-canvas"></canvas>
 <div class="container">
 <h1 class="hero-title"><span class="xec">Xec</span><span class="labs">Labs</span></h1>
-<p class="subtitle">Enterprise business process transformation powered by technology, automation and AI.</p>
-<a href="#projects" class="cta">Explore Portfolio</a>
+<p class="subtitle">
+Business process transformation powered by technology, automation and AI — executed with senior ownership.
+</p>
+<a href="mailto:Michal.Broz@XecLabs.eu?subject=Inquiry%20from%20XecLabs%20Website" class="cta">
+Contact
+</a>
 </div>
 </header>
 
+<!-- WHO -->
+<section id="who" class="section">
+<div class="container who-wrapper">
+<div class="who-left">
+<div class="who-accent"></div>
+<h2>Who We Are</h2>
+<p class="who-lead">
+A niche transformation partner focused on enterprise business process transformation.
+</p>
+<p>
+We redesign and optimize logistics, planning and operational processes leveraging structured technology and AI enablement.
+</p>
+<p>
+Senior accountability. Structured execution. Sustainable measurable impact.
+</p>
+</div>
+
+<div>
+<div class="who-feature">
+<h4>Business Process Transformation</h4>
+<p>End-to-end redesign with measurable KPI uplift.</p>
+</div>
+<div class="who-feature">
+<h4>Technology & AI Enablement</h4>
+<p>Automation, data platforms and AI deployed as performance levers.</p>
+</div>
+<div class="who-feature">
+<h4>Enterprise Execution</h4>
+<p>Global rollouts and real adoption beyond go-live.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- IMPACT -->
 <section id="impact" class="section impact">
 <div class="container">
 <div class="impact-frame">
@@ -121,147 +193,8 @@ footer{text-align:center;padding:40px;color:#666}
 </div>
 </section>
 
-<section id="projects" class="section">
-<div class="container">
-<h2>Transformation Portfolio</h2>
-
-<!-- AB INBEV -->
-<div class="project-company">
-<div class="company-header">
-<img src="abinbev.png" alt="AB InBev">
-<p class="company-description">Global transformation across logistics, planning, automation and AI.</p>
-</div>
-
-<div class="project-grid">
-
-<div class="project-card">
-<h4>Weight per Shipment – Lean Six Sigma</h4>
-<p>Shipment logic redesign and cross-functional alignment.</p>
-<div class="kpi-badges">
-<span>$150K/year</span>
-<span>SLA ↑</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>SAP XI → SAP PO Migration</h4>
-<p>Centralized integration architecture and governance model.</p>
-<div class="kpi-badges">
-<span>Stability ↑</span>
-<span>Incident ↓</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>European TMS – Blue Yonder</h4>
-<p>Multi-country logistics transformation and automation.</p>
-<div class="kpi-badges">
-<span>57% Touchless</span>
-<span>+12% OTIF</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>NLP + RPA Automation</h4>
-<p>AI-powered email parsing integrated with TMS backend.</p>
-<div class="kpi-badges">
-<span>FTE ↓</span>
-<span>SLA ↑</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>Global DMS</h4>
-<p>Enterprise document governance and workflow standardization.</p>
-<div class="kpi-badges">
-<span>+6% First Time Right</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>Complaints Portal + RPA</h4>
-<p>Customer-facing portal with backend automation integration.</p>
-<div class="kpi-badges">
-<span>Cost/Case ↓</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>Workflow Apps – PowerApps</h4>
-<p>Low-code digitalization of approval and master data processes.</p>
-<div class="kpi-badges">
-<span>Cycle Time ↓</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>Smart Inventory Optimization</h4>
-<p>Predictive modeling reducing working capital exposure.</p>
-<div class="kpi-badges">
-<span>Inventory ↓</span>
-<span>Forecast ↑</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>Loading Forecast Model</h4>
-<p>Predictive capacity stabilization model.</p>
-<div class="kpi-badges">
-<span>Urgent Shipments ↓</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>Azure Data Lake + Databricks</h4>
-<p>Enterprise data backbone and executive BI dashboards.</p>
-<div class="kpi-badges">
-<span>Single Source of Truth</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>o9 Global Planning Platform</h4>
-<p>End-to-end global planning backbone.</p>
-<div class="kpi-badges">
-<span>77% → 93%</span>
-<span>$1.5M</span>
-</div>
-</div>
-
-<div class="project-card">
-<h4>Agentic AI – Stock Optimization</h4>
-<p>Autonomous decision-support reducing write-offs.</p>
-<div class="kpi-badges">
-<span>$1.2M Case</span>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- EMCO -->
-<div class="project-company">
-<div class="company-header">
-<img src="emco.png" alt="Emco">
-<p class="company-description">Active operational transformation program.</p>
-</div>
-
-<div class="project-grid">
-<div class="project-card">
-<h4>PLM – Product Lifecycle Management</h4>
-<p>Integrated lifecycle governance from idea to shop floor.</p>
-</div>
-<div class="project-card">
-<h4>APS – Advanced Planning System</h4>
-<p>Improved forecast accuracy and operational alignment.</p>
-</div>
-</div>
-</div>
-
-</div>
-</section>
-
-<section id="contact" class="section">
+<!-- CONTACT -->
+<section id="contact" class="section light">
 <div class="container">
 <h2>Contact</h2>
 <p>Prague · Czech Republic · Europe<br>
