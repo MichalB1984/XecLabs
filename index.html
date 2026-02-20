@@ -8,7 +8,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff}
-.container{max-width:1100px;margin:auto;padding:0 24px;position:relative;z-index:2}
+.container{max-width:1150px;margin:auto;padding:0 24px}
 
 /* NAV */
 .nav{background:#020617;position:sticky;top:0;z-index:10}
@@ -24,7 +24,7 @@ body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff}
 #bg-canvas{position:absolute;inset:0;z-index:0}
 .hero-title{font-size:3.6rem}
 .tagline{font-size:1.3rem;margin-top:16px}
-.subtitle{max-width:650px;margin:14px auto;opacity:.85}
+.subtitle{max-width:700px;margin:14px auto;opacity:.85}
 .cta{display:inline-block;margin-top:32px;padding:14px 28px;background:#2563eb;color:#fff;text-decoration:none;border-radius:6px}
 
 /* SECTIONS */
@@ -33,64 +33,30 @@ body{font-family:Arial,sans-serif;color:#111;line-height:1.6;background:#fff}
 h2{font-size:2.4rem;margin-bottom:30px}
 
 /* WHO */
-.who-wrapper{
-display:grid;
-grid-template-columns:1.2fr 1fr;
-gap:80px;
-align-items:center;
-}
-.who-accent{
-width:60px;height:4px;
-background:linear-gradient(90deg,#3aa0ff,#7c3aed);
-margin-bottom:30px;border-radius:4px;
-}
+.who-wrapper{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center}
+.who-accent{width:60px;height:4px;background:linear-gradient(90deg,#3aa0ff,#7c3aed);margin-bottom:30px;border-radius:4px}
 .who-lead{font-size:1.4rem;font-weight:600;margin-bottom:24px}
 .who-left p{margin-bottom:16px;opacity:.85}
-.who-feature{
-padding:28px;border-radius:16px;
-background:linear-gradient(145deg,#ffffff,#f1f5f9);
-box-shadow:0 12px 35px rgba(0,0,0,.06);
-transition:.3s ease;margin-bottom:20px;
-}
+.who-feature{padding:28px;border-radius:16px;background:linear-gradient(145deg,#ffffff,#f1f5f9);box-shadow:0 12px 35px rgba(0,0,0,.06);transition:.3s;margin-bottom:20px}
 .who-feature:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(0,0,0,.1)}
-.who-feature h4{
-margin-bottom:10px;
-background:linear-gradient(90deg,#3aa0ff,#7c3aed);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+.who-feature h4{margin-bottom:10px;background:linear-gradient(90deg,#3aa0ff,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
 /* IMPACT */
-.impact{
-background:radial-gradient(circle at top left,#111827,#020617 70%);
-color:#fff;
-}
-.impact-frame{
-border:1px solid rgba(255,255,255,.08);
-padding:90px 60px;
-border-radius:20px;
-background:rgba(255,255,255,.03);
-backdrop-filter:blur(10px);
-}
+.impact{background:radial-gradient(circle at top left,#111827,#020617 70%);color:#fff}
+.impact-frame{border:1px solid rgba(255,255,255,.08);padding:90px 60px;border-radius:20px;background:rgba(255,255,255,.03);backdrop-filter:blur(10px)}
 .impact-title{text-align:center;margin-bottom:80px;font-size:2.5rem}
-.impact-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:60px;text-align:center;
-}
-.impact-number{
-font-size:3.8rem;font-weight:700;
-background:linear-gradient(90deg,#3aa0ff,#7c3aed);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:12px;
-}
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:60px;text-align:center}
+.impact-number{font-size:3.8rem;font-weight:700;background:linear-gradient(90deg,#3aa0ff,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
 .impact-subtext{text-align:center;margin-top:70px;opacity:.6}
 
 /* PROJECTS */
-.projects-logos{display:flex;gap:80px;align-items:center;margin-top:50px;flex-wrap:wrap}
-.project-logo img{max-height:80px;opacity:.85;transition:.3s}
-.project-logo img:hover{opacity:1;transform:translateY(-4px)}
+.project-company{margin-top:90px}
+.company-header img{max-height:70px;margin-bottom:40px}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.project-card{padding:24px;border-radius:14px;border:1px solid rgba(0,0,0,.08);background:#fff;transition:.3s}
+.project-card:hover{transform:translateY(-6px);box-shadow:0 14px 35px rgba(0,0,0,.08)}
+.project-card h4{margin-bottom:10px;background:linear-gradient(90deg,#3aa0ff,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.project-card p{font-size:.9rem;opacity:.8}
 
 /* FOOTER */
 footer{text-align:center;padding:40px;color:#666}
@@ -130,7 +96,6 @@ Business process transformation powered by technology, automation and AI — exe
 
 <section id="who" class="section">
 <div class="container who-wrapper">
-
 <div class="who-left">
 <div class="who-accent"></div>
 <h2>Who We Are</h2>
@@ -138,29 +103,26 @@ Business process transformation powered by technology, automation and AI — exe
 A niche transformation partner focused on business process transformation at enterprise scale.
 </p>
 <p>
-We redesign and optimize core business processes across logistics, planning and operations — leveraging
-technology, data platforms and AI as enablers of measurable performance improvement.
+We redesign and optimize core business processes across logistics, planning and operations — leveraging technology and AI as structured performance enablers.
 </p>
 <p>
-Senior-level accountability. Structured execution. Sustainable operational impact.
+Senior accountability. Structured execution. Sustainable operational impact.
 </p>
 </div>
-
 <div>
 <div class="who-feature">
 <h4>Business Process Transformation</h4>
-<p>End-to-end redesign of operational and planning processes with measurable KPI uplift.</p>
+<p>End-to-end redesign with measurable KPI uplift.</p>
 </div>
 <div class="who-feature">
 <h4>Technology & AI Enablement</h4>
-<p>Automation, data platforms and AI deployed as structured performance levers.</p>
+<p>Automation, data platforms and AI deployed as performance levers.</p>
 </div>
 <div class="who-feature">
 <h4>Enterprise Execution</h4>
-<p>Global rollouts, cross-functional governance and real adoption beyond go-live.</p>
+<p>Global rollouts and real adoption beyond go-live.</p>
 </div>
 </div>
-
 </div>
 </section>
 
@@ -168,30 +130,15 @@ Senior-level accountability. Structured execution. Sustainable operational impac
 <div class="container">
 <div class="impact-frame">
 <h2 class="impact-title">Impact Delivered</h2>
-
 <div class="impact-grid">
-<div>
-<div class="impact-number" data-target="10" data-prefix="$" data-suffix="M+">0</div>
-<p>Direct Business Value</p>
+<div><div class="impact-number" data-target="10" data-prefix="$" data-suffix="M+">0</div><p>Direct Business Value</p></div>
+<div><div class="impact-number" data-target="40" data-suffix="+">0</div><p>Countries Impacted</p></div>
+<div><div class="impact-number" data-target="57" data-suffix="%">0</div><p>Touchless Automation</p></div>
+<div><div class="impact-number" data-target="93" data-suffix="%">0</div><p>System Stability</p></div>
 </div>
-<div>
-<div class="impact-number" data-target="40" data-suffix="+">0</div>
-<p>Countries Impacted</p>
-</div>
-<div>
-<div class="impact-number" data-target="57" data-suffix="%">0</div>
-<p>Touchless Process Automation</p>
-</div>
-<div>
-<div class="impact-number" data-target="93" data-suffix="%">0</div>
-<p>System Stability Achieved</p>
-</div>
-</div>
-
 <div class="impact-subtext">
-Delivering structured business process transformation across logistics, planning and enterprise operations.
+Enterprise-scale business process transformation across logistics, planning and operations.
 </div>
-
 </div>
 </div>
 </section>
@@ -199,14 +146,26 @@ Delivering structured business process transformation across logistics, planning
 <section id="projects" class="section">
 <div class="container">
 <h2>Selected Projects</h2>
-<div class="projects-logos">
-<div class="project-logo">
+
+<div class="project-company">
 <img src="abinbev.png" alt="AB InBev">
+<div class="project-grid">
+<div class="project-card"><h4>European TMS Transformation</h4><p>57% touchless automation · +12% OTIF · Multi-country rollout</p></div>
+<div class="project-card"><h4>o9 Planning Platform</h4><p>System stability 77% → 93% · $1.5M savings</p></div>
+<div class="project-card"><h4>Agentic AI Optimization</h4><p>$1.2M business case · Predictive stock management</p></div>
+<div class="project-card"><h4>Azure Data Lake & BI</h4><p>Enterprise data backbone · Executive dashboards</p></div>
 </div>
-<div class="project-logo">
+</div>
+
+<div class="project-company">
 <img src="emco.png" alt="Emco">
+<div class="project-grid">
+<div class="project-card"><h4>Smart Inventory Optimization</h4><p>Working capital reduction · Predictive forecasting uplift</p></div>
+<div class="project-card"><h4>Workflow Automation Apps</h4><p>Digitized approvals · Reduced manual admin</p></div>
+<div class="project-card"><h4>Complaints Portal (PWA)</h4><p>SLA transparency · Customer-centric automation</p></div>
 </div>
 </div>
+
 </div>
 </section>
 
