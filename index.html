@@ -52,6 +52,30 @@ h2{font-size:2.2rem;margin-bottom:24px}
 .green .service-line{background:#059669}
 .orange .service-line{background:#ea580c}
 
+/* PROJECT LOGOS */
+.projects-logos{
+  display:flex;
+  gap:80px;
+  align-items:center;
+  margin-top:50px;
+  flex-wrap:wrap;
+}
+.project-logo img{
+  max-height:80px;
+  width:auto;
+  opacity:.85;
+  transition:.3s ease;
+}
+.project-logo img:hover{
+  opacity:1;
+  transform:translateY(-4px);
+}
+.projects-note{
+  margin-top:40px;
+  color:#555;
+  font-size:.95rem;
+}
+
 /* SOCIAL */
 .social{margin-top:24px}
 .social a{color:#2563eb;text-decoration:none;font-weight:600}
@@ -62,6 +86,7 @@ footer{text-align:center;padding:36px;color:#666}
 @media(max-width:900px){
 .who-layout{grid-template-columns:1fr}
 .hero-title{font-size:2.6rem}
+.projects-logos{gap:40px}
 }
 </style>
 </head>
@@ -129,53 +154,26 @@ footer{text-align:center;padding:36px;color:#666}
 <section id="what" class="section light">
   <div class="container">
     <h2>What we do</h2>
-
     <div class="services-grid">
       <div class="service-card blue">
         <div class="service-line"></div>
         <h3>Digital & Process Transformation</h3>
-        <p>
-          We design and deliver end-to-end digital and process transformations
-          across operations, supply chain and corporate functions.
-        </p>
-        <p>
-          From strategy to execution — platforms, processes, data and governance.
-        </p>
+        <p>We design and deliver end-to-end digital and process transformations across operations and supply chain.</p>
       </div>
-
       <div class="service-card purple">
         <div class="service-line"></div>
         <h3>Automation & AI Enablement</h3>
-        <p>
-          Identification, prioritization and delivery of automation and AI use cases
-          with clear business value.
-        </p>
-        <p>
-          RPA, AI and agentic automation — from business case to scaled rollout.
-        </p>
+        <p>Identification, prioritization and delivery of automation and AI use cases with clear business value.</p>
       </div>
-
       <div class="service-card green">
         <div class="service-line"></div>
         <h3>Program & Project Delivery</h3>
-        <p>
-          Hands-on leadership of complex transformation programs
-          and critical enterprise initiatives.
-        </p>
-        <p>
-          Governance, stakeholders, delivery cadence and risk management.
-        </p>
+        <p>Hands-on leadership of complex transformation programs and critical enterprise initiatives.</p>
       </div>
-
       <div class="service-card orange">
         <div class="service-line"></div>
         <h3>Change & Adoption</h3>
-        <p>
-          Ensuring solutions are adopted and embedded into daily operations.
-        </p>
-        <p>
-          Change strategy, communication, training, KPIs and post-go-live support.
-        </p>
+        <p>Ensuring solutions are adopted and embedded into daily operations.</p>
       </div>
     </div>
   </div>
@@ -185,8 +183,23 @@ footer{text-align:center;padding:36px;color:#666}
 <section id="projects" class="section">
   <div class="container">
     <h2>Selected projects</h2>
-    <p class="lead">Detailed project references will be published soon.</p>
-    <p>Due to client confidentiality, case studies will be shared progressively.</p>
+
+    <p class="lead">
+      Selected experience from enterprise and FMCG environments.
+    </p>
+
+    <div class="projects-logos">
+      <div class="project-logo">
+        <img src="abinbev.png" alt="AB InBev logo">
+      </div>
+      <div class="project-logo">
+        <img src="emco.png" alt="Emco logo">
+      </div>
+    </div>
+
+    <p class="projects-note">
+      Detailed case studies available upon request.
+    </p>
   </div>
 </section>
 
