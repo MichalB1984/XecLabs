@@ -321,23 +321,85 @@ Prague · Czech Republic · Europe<br>
 <footer>© 2026 XecLabs</footer>
 
 <script>
+
+// HERO ANIMATION
 const c=document.getElementById("bg-canvas"),
 ctx=c.getContext("2d"),
 h=document.querySelector(".hero");
-function r(){c.width=h.offsetWidth;c.height=h.offsetHeight}
-r();window.addEventListener("resize",r);
-const p=[...Array(50)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3}));
-(function a(){
-ctx.clearRect(0,0,c.width,c.height);
-p.forEach(d=>{
-d.x+=d.vx;d.y+=d.vy;
-if(d.x<0||d.x>c.width)d.vx*=-1;
-if(d.y<0||d.y>c.height)d.vy*=-1;
-ctx.fillStyle="rgba(255,255,255,.3)";
-ctx.beginPath();ctx.arc(d.x,d.y,1.5,0,Math.PI*2);ctx.fill()
-});
-requestAnimationFrame(a)
+
+function resizeCanvas(){
+  c.width=h.offsetWidth;
+  c.height=h.offsetHeight;
+}
+resizeCanvas();
+window.addEventListener("resize",resizeCanvas);
+
+const particles=[...Array(50)].map(()=>({
+  x:Math.random()*c.width,
+  y:Math.random()*c.height,
+  vx:(Math.random()-.5)*.3,
+  vy:(Math.random()-.5)*.3
+}));
+
+(function animate(){
+  ctx.clearRect(0,0,c.width,c.height);
+  particles.forEach(p=>{
+    p.x+=p.vx;
+    p.y+=p.vy;
+    if(p.x<0||p.x>c.width)p.vx*=-1;
+    if(p.y<0||p.y>c.height)p.vy*=-1;
+    ctx.fillStyle="rgba(255,255,255,.3)";
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,1.5,0,Math.PI*2);
+    ctx.fill();
+  });
+  requestAnimationFrame(animate);
 })();
+
+
+// IMPACT COUNT-UP (FIXED VERSION)
+
+const counters=document.querySelectorAll(".impact-number");
+
+function runCounter(counter){
+  if(counter.dataset.done==="true") return;
+  counter.dataset.done="true";
+
+  const target=parseInt(counter.dataset.target);
+  const prefix=counter.dataset.prefix || "";
+  const suffix=counter.dataset.suffix || "";
+
+  const duration=1600;
+  const startTime=performance.now();
+
+  function update(currentTime){
+    const progress=Math.min((currentTime-startTime)/duration,1);
+    const value=Math.floor(progress*target);
+    counter.textContent=prefix+value+suffix;
+
+    if(progress<1){
+      requestAnimationFrame(update);
+    } else {
+      counter.textContent=prefix+target+suffix;
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+const impactSection=document.querySelector("#impact");
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      counters.forEach(counter=>runCounter(counter));
+      observer.disconnect();
+    }
+  });
+},{threshold:0.5});
+
+observer.observe(impactSection);
+
 </script>
 
 </body>
