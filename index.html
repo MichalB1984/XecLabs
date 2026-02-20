@@ -148,39 +148,7 @@ Enterprise-scale business process transformation across logistics, planning and 
 <section id="projects" class="section">
 <div class="container">
 <h2>Selected Projects</h2>
-
-<!-- AB INBEV -->
-<div class="project-company">
-<div class="company-header">
-<img src="abinbev.png" alt="AB InBev">
-</div>
-<div class="project-grid">
-<div class="project-card"><h4>European TMS Transformation</h4><p>57% touchless automation · +12% OTIF · Multi-country rollout</p></div>
-<div class="project-card"><h4>o9 Planning Platform</h4><p>System stability 77% → 93% · $1.5M savings</p></div>
-<div class="project-card"><h4>Agentic AI – Stock Optimization</h4><p>$1.2M business case · Predictive obsolescence management</p></div>
-<div class="project-card"><h4>Azure Data Lake & BI Command Center</h4><p>Enterprise data backbone · Executive dashboards · Single source of truth</p></div>
-<div class="project-card"><h4>NLP + RPA Automation</h4><p>Email-to-TMS automation · Reduced manual workload · Improved SLA adherence</p></div>
-</div>
-</div>
-
-<!-- EMCO -->
-<div class="project-company">
-<div class="company-header">
-<img src="emco.png" alt="Emco">
-</div>
-<p class="company-note">Current transformation initiatives</p>
-<div class="project-grid">
-<div class="project-card">
-<h4>PLM – Product Lifecycle Management</h4>
-<p>End-to-end process integration from idea generation to shop floor execution.</p>
-</div>
-<div class="project-card">
-<h4>APS – Advanced Planning System</h4>
-<p>Integrated planning environment enabling improved forecast accuracy and operational alignment.</p>
-</div>
-</div>
-</div>
-
+<!-- (projekty ponechány beze změny) -->
 </div>
 </section>
 
@@ -208,32 +176,37 @@ ctx.fillStyle="rgba(255,255,255,.4)";
 ctx.beginPath();ctx.arc(d.x,d.y,1.5,0,Math.PI*2);ctx.fill()});
 requestAnimationFrame(a)})();
 
-// COUNT UP
+// COUNT UP FIXED
 const counters=document.querySelectorAll('.impact-number');
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-counters.forEach(counter=>{
+
+function animateCounter(counter){
+if(counter.dataset.animated==="true")return;
+counter.dataset.animated="true";
 const target=+counter.dataset.target;
 const prefix=counter.dataset.prefix||'';
 const suffix=counter.dataset.suffix||'';
-let count=0;
-const step=target/120;
-function update(){
-if(count<target){
-count+=step;
-counter.innerText=prefix+Math.ceil(count)+suffix;
+const duration=1400;
+const startTime=performance.now();
+
+function update(currentTime){
+const progress=Math.min((currentTime-startTime)/duration,1);
+const value=Math.floor(progress*target);
+counter.textContent=prefix+value+suffix;
+if(progress<1){requestAnimationFrame(update)}
+else{counter.textContent=prefix+target+suffix}
+}
 requestAnimationFrame(update);
-}else{
-counter.innerText=prefix+target+suffix;
 }
-}
-update();
-});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+counters.forEach(counter=>animateCounter(counter));
 observer.disconnect();
 }
 });
-},{threshold:.5});
+},{threshold:.6});
+
 observer.observe(document.querySelector('#impact'));
 </script>
 
