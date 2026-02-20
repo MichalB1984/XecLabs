@@ -96,38 +96,6 @@ Business process transformation powered by technology, automation and AI — exe
 </div>
 </header>
 
-<section id="who" class="section">
-<div class="container who-wrapper">
-<div class="who-left">
-<div class="who-accent"></div>
-<h2>Who We Are</h2>
-<p class="who-lead">
-A niche transformation partner focused on business process transformation at enterprise scale.
-</p>
-<p>
-We redesign and optimize core business processes across logistics, planning and operations — leveraging technology and AI as structured performance enablers.
-</p>
-<p>
-Senior accountability. Structured execution. Sustainable operational impact.
-</p>
-</div>
-<div>
-<div class="who-feature">
-<h4>Business Process Transformation</h4>
-<p>End-to-end redesign with measurable KPI uplift.</p>
-</div>
-<div class="who-feature">
-<h4>Technology & AI Enablement</h4>
-<p>Automation, data platforms and AI deployed as performance levers.</p>
-</div>
-<div class="who-feature">
-<h4>Enterprise Execution</h4>
-<p>Global rollouts and real adoption beyond go-live.</p>
-</div>
-</div>
-</div>
-</section>
-
 <section id="impact" class="section impact">
 <div class="container">
 <div class="impact-frame">
@@ -148,7 +116,29 @@ Enterprise-scale business process transformation across logistics, planning and 
 <section id="projects" class="section">
 <div class="container">
 <h2>Selected Projects</h2>
-<!-- (projekty ponechány beze změny) -->
+
+<div class="project-company">
+<div class="company-header">
+<img src="abinbev.png" alt="AB InBev">
+</div>
+<div class="project-grid">
+<div class="project-card"><h4>European TMS Transformation</h4><p>57% touchless automation · +12% OTIF · Multi-country rollout</p></div>
+<div class="project-card"><h4>o9 Planning Platform</h4><p>System stability 77% → 93% · $1.5M savings</p></div>
+<div class="project-card"><h4>Agentic AI – Stock Optimization</h4><p>$1.2M business case · Predictive obsolescence management</p></div>
+</div>
+</div>
+
+<div class="project-company">
+<div class="company-header">
+<img src="emco.png" alt="Emco">
+</div>
+<p class="company-note">Current transformation initiatives</p>
+<div class="project-grid">
+<div class="project-card"><h4>PLM – Product Lifecycle Management</h4><p>From idea to shop floor integration.</p></div>
+<div class="project-card"><h4>APS – Advanced Planning System</h4><p>Improving forecast accuracy and capacity alignment.</p></div>
+</div>
+</div>
+
 </div>
 </section>
 
@@ -176,9 +166,8 @@ ctx.fillStyle="rgba(255,255,255,.4)";
 ctx.beginPath();ctx.arc(d.x,d.y,1.5,0,Math.PI*2);ctx.fill()});
 requestAnimationFrame(a)})();
 
-// COUNT UP FIXED
+// FIXED COUNT-UP
 const counters=document.querySelectorAll('.impact-number');
-
 function animateCounter(counter){
 if(counter.dataset.animated==="true")return;
 counter.dataset.animated="true";
@@ -187,7 +176,6 @@ const prefix=counter.dataset.prefix||'';
 const suffix=counter.dataset.suffix||'';
 const duration=1400;
 const startTime=performance.now();
-
 function update(currentTime){
 const progress=Math.min((currentTime-startTime)/duration,1);
 const value=Math.floor(progress*target);
@@ -197,7 +185,6 @@ else{counter.textContent=prefix+target+suffix}
 }
 requestAnimationFrame(update);
 }
-
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -206,7 +193,6 @@ observer.disconnect();
 }
 });
 },{threshold:.6});
-
 observer.observe(document.querySelector('#impact'));
 </script>
 
