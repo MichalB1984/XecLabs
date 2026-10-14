@@ -2,21 +2,21 @@
   "schemaVersion": "1.0",
   "organization": "XecLabs",
   "portfolio": [
-    {"id":"weight-per-shipment","company":"AB InBev","title":"Optimalizace hmotnosti zásilek","category":"REDESIGN PROCESŮ","description":"Redesign expedice metodou Lean Six Sigma a lepší využití přepravní kapacity.","outcomes":["150 tis. USD ročně","Vyšší vytížení"]},
-    {"id":"sap-integration","company":"AB InBev","title":"Migrace SAP XI na SAP PO","category":"MODERNIZACE PLATFOREM","description":"Centralizovaná integrační architektura a model řízení.","outcomes":["Méně incidentů","Vyšší stabilita"]},
-    {"id":"european-tms","company":"AB InBev","title":"Evropský systém řízení dopravy","category":"LOGISTIKA","description":"Automatizace logistiky ve více zemích a standardizace procesů pomocí Blue Yonder.","outcomes":["57 % bez zásahu","+12 % OTIF"]},
-    {"id":"email-automation","company":"AB InBev","title":"Automatizace e-mailů pomocí NLP a RPA","category":"INTELIGENTNÍ AUTOMATIZACE","description":"Třídění e-mailů a automatické aktualizace TMS pomocí softwarových robotů.","outcomes":["Úspora kapacit","Méně chyb"]},
-    {"id":"document-management","company":"AB InBev","title":"Globální správa dokumentů","category":"FIREMNÍ PLATFORMY","description":"Platforma pro správu dokumentů a řízení pracovních postupů.","outcomes":["+6 % FTR","Připraveno na audit"]},
-    {"id":"complaints-portal","company":"AB InBev","title":"Portál reklamací a RPA","category":"DIGITÁLNÍ ZÁKAZNICKÁ ZKUŠENOST","description":"Digitální zákaznický portál propojený s automatizací procesů na pozadí.","outcomes":["Rychlejší vyřízení","Nižší náklady"]},
-    {"id":"workflow-apps","company":"AB InBev","title":"Sada aplikací pro pracovní postupy","category":"LOW-CODE","description":"Aplikace Power Apps pro schvalování a správu kmenových dat.","outcomes":["Rychlejší schválení","Méně chyb"]},
-    {"id":"smart-inventory","company":"AB InBev","title":"Chytré řízení zásob","category":"DATOVÁ VĚDA","description":"Prediktivní optimalizace zásob pomocí modelů strojového učení.","outcomes":["Nižší vázaný kapitál","Vyšší dostupnost"]},
-    {"id":"loading-forecast","company":"AB InBev","title":"Model predikce nakládek","category":"PREDIKTIVNÍ ANALYTIKA","description":"Prediktivní plánování přepravních objemů a kapacit.","outcomes":["Méně urgentních přeprav"]},
-    {"id":"data-command-center","company":"AB InBev","title":"Datové jezero a BI centrum","category":"DATOVÁ PLATFORMA","description":"Azure Data Lake, Databricks a BI dashboardy jako společný datový základ firmy.","outcomes":["Jeden zdroj pravdy"]},
-    {"id":"o9-planning","company":"AB InBev","title":"Globální plánovací platforma","category":"PLÁNOVÁNÍ","description":"Integrace plánování od začátku do konce a zvýšení stability platformy o9.","outcomes":["Stabilita 77 → 93 %","Úspora 1,5 mil. USD"]},
-    {"id":"stock-obsolescence-ai","company":"AB InBev","title":"Agentní AI pro zastarávající zásoby","category":"PRAKTICKÉ VYUŽITÍ AI","description":"AI řešení pro redistribuci zásob a omezení jejich zastarávání.","outcomes":["Obchodní přínos 1,2 mil. USD"]}
+    {"id":"weight-per-shipment","company":"AB InBev","title":"Weight per shipment optimization","category":"PROCESS DESIGN","description":"Lean Six Sigma redesign of shipment behavior and transport utilization.","outcomes":["$150K annual value","Higher utilization"]},
+    {"id":"sap-integration","company":"AB InBev","title":"SAP XI to SAP PO migration","category":"PLATFORM MODERNIZATION","description":"Centralized integration architecture and governance model.","outcomes":["Reduced incidents","Higher stability"]},
+    {"id":"european-tms","company":"AB InBev","title":"European transport management","category":"LOGISTICS","description":"Multi-country logistics automation and process standardization with Blue Yonder.","outcomes":["57% touchless","+12% OTIF"]},
+    {"id":"email-automation","company":"AB InBev","title":"NLP, Outlook and RPA automation","category":"INTELLIGENT AUTOMATION","description":"Email classification and automated TMS updates using RPA bots.","outcomes":["FTE savings","Lower error rate"]},
+    {"id":"document-management","company":"AB InBev","title":"Global document management","category":"ENTERPRISE PLATFORMS","description":"Enterprise document management platform and workflow governance model.","outcomes":["+6% FTR","Audit ready"]},
+    {"id":"complaints-portal","company":"AB InBev","title":"Complaints portal and RPA","category":"DIGITAL EXPERIENCE","description":"Digital customer portal integrated with backend automation.","outcomes":["Faster resolution","Lower processing cost"]},
+    {"id":"workflow-apps","company":"AB InBev","title":"Workflow apps suite","category":"LOW-CODE","description":"Low-code approval and master data workflows built with Power Apps.","outcomes":["Faster approvals","Lower error rate"]},
+    {"id":"smart-inventory","company":"AB InBev","title":"Smart inventory management","category":"DATA SCIENCE","description":"Predictive inventory optimization using machine learning models.","outcomes":["Lower working capital","Higher service level"]},
+    {"id":"loading-forecast","company":"AB InBev","title":"Loading forecast model","category":"PREDICTIVE ANALYTICS","description":"Predictive capacity planning for transport volumes.","outcomes":["Fewer urgent shipments"]},
+    {"id":"data-command-center","company":"AB InBev","title":"Data lake and BI command center","category":"DATA PLATFORM","description":"Azure Data Lake, Databricks and BI dashboards creating an enterprise data backbone.","outcomes":["Single source of truth"]},
+    {"id":"o9-planning","company":"AB InBev","title":"Global planning platform","category":"PLANNING","description":"End-to-end planning integration and stability uplift on o9.","outcomes":["77% to 93% stability","$1.5M savings"]},
+    {"id":"stock-obsolescence-ai","company":"AB InBev","title":"Agentic AI for stock obsolescence","category":"APPLIED AI","description":"AI-driven redistribution and optimization engine.","outcomes":["$1.2M business case"]}
   ],
   "currentInitiatives": [
-    {"company":"Emco","title":"Řízení životního cyklu produktu","description":"Propojení vývoje produktu od nápadu až po výrobu."},
-    {"company":"Emco","title":"Pokročilý plánovací systém","description":"Přesnější prognózy a lepší sladění provozního plánování."}
+    {"company":"Emco","title":"Product lifecycle management","description":"Connecting product development from idea through to the shop floor."},
+    {"company":"Emco","title":"Advanced planning system","description":"Improving forecast accuracy and operational alignment."}
   ]
 }
